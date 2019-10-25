@@ -1,0 +1,38 @@
+<html>
+    <head>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <meta http-equiv="refresh" content="2.2" />
+        <script>
+        j = {{ai | safe }};
+        emo = {{emo | safe }};
+
+        console.log(j);
+        console.log(emo);
+        $(document).ready(function(){ 
+
+                if (j["beard"] > .6){
+                    $("#beard").html( 
+                    "<h3> There is a Beard !! " + j["beard"] + "</h3>"
+                ); 
+                }else{
+                    $("#beard").html( 
+                    "<h3> No Beard !! " + j["beard"]  + "</h3>"
+                ); 
+                }
+
+                $("#moustache").html( 
+                    "Moustache " + j["moustache"]
+                ); 
+                $("#sideburns").html( 
+                    "Sideburns " + j["sideburns"]
+                ); 
+         }); 
+        </script>
+    </head>
+
+    <img src="ai.jpg">
+
+    <div id="beard"></div>
+    <div id="moustache"></div>
+    <div id="sideburns"></div>
+</html>
